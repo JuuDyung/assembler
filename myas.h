@@ -4,9 +4,11 @@
 
 // complete this header file
 
-enum type{ reg=0,mem,imm};
-
-struct type{
+typedef struct Type{
 	char* opcode;
 	
-};
+}Type;
+
+int instr_trans(char *op, char *args, char* mcode);
+char* examine(char* t);
+int is_valid(char *op, char *args);

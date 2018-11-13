@@ -5,6 +5,7 @@ int instr_trans(char *op, char *args, char* mcode)
 	// check syntax 
 	if(!is_valid(op, args)){
 		printf("Error: %s %s is not valid\n", op, args);
+		strcpy(mcode,"error");
 		return 0;
 	}
 
@@ -19,14 +20,17 @@ int instr_trans(char *op, char *args, char* mcode)
 	
 	//char tmp[256];
 	//char opcode[10];
-	//char *src,*des;
 
-	type src_;
-	type dst_;
+	Type src_;
+	Type dst_;
 
 	//src=strtok(tmp,",");
 	//des=strtok(NULL,",");
 	
+	//if(is_valid(op,args)==0){
+		//strcpy(mcode,"error");
+		//return 0;
+	//}
 	if(strcmp(src_.opcode,"reg")==0){
 		//case 1(reg to reg)
 		if(strcmp(dst_.opcode,"reg")==0)
@@ -40,10 +44,10 @@ int instr_trans(char *op, char *args, char* mcode)
 		if(src_.opcode[0]=='(') strcpy(mcode,"8b");
 
 		//case 3(mem to reg dis)
-		else if((src_.opcode[0]=='-')&&(strchr(src_.opcode,"(")!=NULL)) strcpy(mcode,"8b");
+		else if((src_.opcode[0]=='-')&&(strchr(src_.opcode,'(')!=NULL)) strcpy(mcode,"8b");
 
 		//case 4(mem to reg eax)
-		else if(src_.opcode[0]=='0') strcpy(mcode,"a1);
+		else if(src_.opcode[0]=='0') strcpy(mcode,"a1");
 	}
  
 	else if(strcmp(src_.opcode,"imm")==0){
