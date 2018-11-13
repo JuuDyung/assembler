@@ -17,7 +17,13 @@ int instr_trans(char *op, char *args, char* mcode)
     /*  							*/
 	/********************************/
 	int type;
+	char tmp[256];
 	char opcode[10];
+	char *str1,*str2;
+
+	str1=strtok(tmp,",");
+	str2=strtok(NULL,",");
+
 	swtch(type){
 		case 1:{//reg to reg
 			strcpy(opcode,"89");
@@ -47,5 +53,6 @@ int instr_trans(char *op, char *args, char* mcode)
 			strcpy(opcode,"ERR");
 			break;
 		}
+	}
 	return 1;	
 }

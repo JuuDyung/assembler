@@ -10,6 +10,16 @@ int is_valid(char *op, char *args)
 	/*         syntax check         */
     /*  							*/
 	/********************************/
+	char tmp[256];
+	char *str1,*str2;
+
+	str1=strtok(tmp,",");
+	str2=strtok(NULL,",");
+
+
+
+
+
 	
 	return 1;
 }
