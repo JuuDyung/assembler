@@ -9,28 +9,12 @@ int instr_trans(char *op, char *args, char* mcode)
 		return 0;
 	}
 
-
 	strcpy(mcode, "AB CD EF");
-
-	/********************************/
-    /*  							*/
-	/*    generate machine code     */
-    /*  							*/
-	/********************************/
-	
-	//char tmp[256];
-	//char opcode[10];
 
 	Type src_;
 	Type dst_;
 
-	//src=strtok(tmp,",");
-	//des=strtok(NULL,",");
-	
-	//if(is_valid(op,args)==0){
-		//strcpy(mcode,"error");
-		//return 0;
-	//}
+
 	if(strcmp(src_.opcode,"reg")==0){
 		//case 1(reg to reg)
 		if(strcmp(dst_.opcode,"reg")==0)
